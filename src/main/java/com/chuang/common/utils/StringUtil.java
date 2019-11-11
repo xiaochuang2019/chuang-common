@@ -4,6 +4,26 @@ import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 public class StringUtil {
+	
+	/**
+	 * 
+	 * @Title: isNumber
+	 * @Description: 判断是否是是数字类型
+	 * @param src
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isNumber(String src) {
+		if (null == src)
+			return false;
+		// 判断字符中是否包含. ,还需要判断.不能再
+
+		String regex = "^-?[0-9]+(\\.[0-9]+)?$";
+
+		return src.matches(regex);
+
+	}
+	
 	// 方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
 		public static boolean hasLength(String src) {
 			return src!=null&&src.length()>0;

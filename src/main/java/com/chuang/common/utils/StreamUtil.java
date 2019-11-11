@@ -34,7 +34,7 @@ public class StreamUtil {
 		String str="";
 		try {
 			while ((n=src.read(b))!=-1) {
-				str+=new String(b,0,n,"utf-8");
+				str+=new String(b,0,n,"gbk");
 			}
 		} catch (Exception e) {
 			closeAll(src);
