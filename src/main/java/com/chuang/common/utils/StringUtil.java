@@ -1,12 +1,31 @@
 package com.chuang.common.utils;
 
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringUtil {
-	
+	/**
+	 * 校验传入的参数是否为url
+	 * @param param
+	 * @return
+	 */
+	public static boolean isHttpUrl(String param) {
+		 URL url;  
+		 try {  
+	         url = new URL(param);  
+	         InputStream in = url.openStream();  
+	         return true; 
+	    } catch (Exception e1) {  
+	         System.out.println("连接打不开!");  
+	       
+	    }  
+		 return false;
+		
+	}
 	/**
 	 * 
 	 * @Title: isNumber
